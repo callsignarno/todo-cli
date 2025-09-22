@@ -27,10 +27,12 @@ Keep track of your tasks easily using your terminal, with persistent storage in 
 
 2. Make sure you have Python 3 installed:
 
+    ```bash
     python --version
 
 3. Run the app:
 
+    ```bash
     python todo.py
 
 ---
