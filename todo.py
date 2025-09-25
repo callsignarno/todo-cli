@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 # Base directory: next to the script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -22,7 +23,8 @@ def show_todos(todos):
     print("\nYour tasks:")
     for i, todo in enumerate(todos, 1):
         status = "✔" if todo["done"] else "✘"
-        print(f"{i}. [{status}] {todo['text']}")
+        created = todo.get("created", "N/A")
+        print(f"{i}. [{status}] {todo['text']} (added: {created})")
     print()
 
 def main():
@@ -43,8 +45,9 @@ def main():
         elif cmd.startswith("add "):
             text = cmd[4:].strip()
             if text:
-                todos.append({"text": text, "done": False})
-                print(f"Added: {text}")
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                todos.append({"text": text, "done": False, "created": timestamp})
+                print(f"Added: {text} (added: {timestamp})")
             else:
                 print("⚠ Task text can’t be empty.")
 
