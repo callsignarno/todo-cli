@@ -51,28 +51,41 @@ Keep track of your tasks easily using your terminal, with persistent storage in 
 
 ## Example Session
 
+```text
+Commands: add [task], done [num], del [num], list, quit
+
 > add Buy groceries
-Added: Buy groceries
+Added: Buy groceries (added: 2025-09-25 08:15:23)
 
 > add Finish homework
-Added: Finish homework
+Added: Finish homework (added: 2025-09-25 08:20:10)
 
 > list
-1. [✘] Buy groceries
-2. [✘] Finish homework
+
+Your tasks:
+1. [✘] Buy groceries (added: 2025-09-25 08:15:23)
+2. [✘] Finish homework (added: 2025-09-25 08:20:10)
 
 > done 1
 Marked task 1 as done.
 
 > list
-1. [✔] Buy groceries
-2. [✘] Finish homework
+
+Your tasks:
+1. [✔] Buy groceries (added: 2025-09-25 08:15:23)
+2. [✘] Finish homework (added: 2025-09-25 08:20:10)
 
 > del 2
 Deleted: Finish homework
 
+> list
+
+Your tasks:
+1. [✔] Buy groceries (added: 2025-09-25 08:15:23)
+
 > quit
 Saved & goodbye!
+```
 
 ---
 
