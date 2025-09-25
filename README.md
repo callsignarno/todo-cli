@@ -7,7 +7,7 @@ Keep track of your tasks easily using your terminal, with persistent storage in 
 
 ## Features
 
-- Add new tasks
+- Add new tasks with timestamps
 - Mark tasks as done
 - Delete tasks
 - List all tasks
