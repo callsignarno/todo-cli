@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+import platform
 
 # Base directory: next to the script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -15,6 +16,8 @@ def load_todos():
 def save_todos(todos):
     with open(STORAGE_FILE, "w") as f:
         json.dump(todos, f, indent=2)
+    if platform.system()=="Windows":
+        os.system(f'attrib +h "{STORAGE_FILE}"')
 
 def show_todos(todos):
     if not todos:
